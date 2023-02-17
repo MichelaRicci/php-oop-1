@@ -17,12 +17,23 @@ class Movie
         $this->genre = $genre;
         $this->director = $director;
     }
-}
+
+    public function printMovie(){
+        echo $this->title.$this->year.$this->language.$this->genre.$this->director;
+    }
+
+};
 
 
 $back_to_the_future = new Movie('Back to the Future', 1985,'english', 'sci-fi', 'Robert Zemeckis');
+$back_to_the_future_2 = new Movie('Back to the Future Part II', 1989,'english', 'sci-fi', 'Robert Zemeckis');
+$back_to_the_future_3 = new Movie('Back to the Future Part III', 1990,'english', 'sci-fi', 'Robert Zemeckis');
 
-var_dump($back_to_the_future);
+
+$back_to_the_future -> printMovie();
+$back_to_the_future_2 -> printMovie();
+$back_to_the_future_3 -> printMovie();
+
 
 
 ?>
