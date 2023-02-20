@@ -24,7 +24,7 @@ include __DIR__ . '/data/data.php';
             <ul class="list-group">
                 <li>Year: <?= $movie->year ?></li>
                 <li>Language: <?= $movie->language ?></li>
-                <li>Genre: <?= $movie->genre ?></li>
+                <li>Genre: <?= $movie->genre->name ?></li>
                 <li>Director: <?= $movie->director ?></li>
             </ul>
 
