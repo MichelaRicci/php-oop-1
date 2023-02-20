@@ -1,48 +1,8 @@
 <?php
-
-class Movie 
-{
-    public $title;
-    public $year;
-    public $language;
-    public $genre;
-    public $director; 
-
-
-
-    public function __construct($title, $year, $language, $genre, $director){
-        $this->title = $title;
-        $this->year = $year;
-        $this->language = $language;
-        $this->genre = $genre;
-        $this->director = $director;
-    }
-
-    public function printMovie(){
-        return "$this->title.$this->year.$this->language.$this->genre.$this->director";
-    }
-
-};
-
-class Genre 
-{
-    public $name;
-
-    public function __construct($name){
-        $this->name = $name;
-    }
-
-}
-
-
-$back_to_the_future = new Movie('Back to the Future', 1985,'english', 'sci-fi', 'Robert Zemeckis');
-$back_to_the_future_2 = new Movie('Back to the Future Part II', 1989,'english', 'sci-fi', 'Robert Zemeckis');
-$back_to_the_future_3 = new Movie('Back to the Future Part III', 1990,'english', [new Genre('sci-fi'), new Genre('western')], 'Robert Zemeckis');
-
-
-
-
+include __DIR__ . '/data/data.php';
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,40 +17,17 @@ $back_to_the_future_3 = new Movie('Back to the Future Part III', 1990,'english',
     <div>
         <h1>Movies</h1>
 
-        <h4 class="mt-3">
-            <?= $back_to_the_future->title ?>
-        </h4>
+        <?php foreach ($movies as $movie) : ?>
 
-        <ul class="list-group">
-            <li>Year: <?= $back_to_the_future->year ?></li>
-            <li>Language: <?= $back_to_the_future->language ?></li>
-            <li>Genre: <?= $back_to_the_future->genre ?></li>
-            <li>Director: <?= $back_to_the_future->director ?></li>
-        </ul>
+            <ul>
+                <li>Year: <?= $movie->year ?></li>
+                <li>Language: <?= $movie->language ?></li>
+                <li>Genre: <?= $movie->genre ?></li>
+                <li>Director: <?= $movie->director ?></li>
+            </ul>
 
+        <?php endforeach; ?>
 
-        <h4 class="mt-3">
-            <?= $back_to_the_future_2->title ?>
-        </h4>
-
-        <ul class="list-group">
-            <li>Year: <?= $back_to_the_future_2->year ?></li>
-            <li>Language: <?= $back_to_the_future_2->language ?></li>
-            <li>Genre: <?= $back_to_the_future_2->genre ?></li>
-            <li>Director: <?= $back_to_the_future_2->director ?></li>
-        </ul>
-
-
-        <h4 class="mt-3">
-            <?= $back_to_the_future_3->title ?>
-        </h4>
-
-        <ul class="list-group">
-            <li>Year: <?= $back_to_the_future_3->year ?></li>
-            <li>Language: <?= $back_to_the_future_3->language ?></li>
-            <li>Genre: <?= $back_to_the_future_3->genre->name ?></li>
-            <li>Director: <?= $back_to_the_future_3->director ?></li>
-        </ul>
     </div>
   
     
