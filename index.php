@@ -18,8 +18,10 @@ include __DIR__ . '/data/data.php';
         <h1>Movies</h1>
 
         <?php foreach ($movies as $movie) : ?>
-
-            <ul>
+            <h4 class="mt-3">
+                <?= $movie->title ?>
+            </h4>
+            <ul class="list-group">
                 <li>Year: <?= $movie->year ?></li>
                 <li>Language: <?= $movie->language ?></li>
                 <li>Genre: <?= $movie->genre ?></li>
