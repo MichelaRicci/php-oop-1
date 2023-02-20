@@ -40,10 +40,6 @@ $back_to_the_future_2 = new Movie('Back to the Future Part II', 1989,'english', 
 $back_to_the_future_3 = new Movie('Back to the Future Part III', 1990,'english', [new Genre('sci-fi'), new Genre('western')], 'Robert Zemeckis');
 
 
-$back_to_the_future -> printMovie();
-$back_to_the_future_2 -> printMovie();
-$back_to_the_future_3 -> printMovie();
-
 
 
 ?>
